@@ -28,16 +28,3 @@ console.log(이름2);
  const 이름3 = "신동엽";
  console.log(이름3);
  // 이름3 = "신동엽2"; -> 오류발생 : Assignment to constant variable.
-
-console.log("숫자 자료 : 가격, 총 결제 금액, 주문수량");
-console.log(2000, 4000, 3);
-console.log("문자열 자료 : 제품명, 카테고리명, 주문번호");
-console.log("아메리카노","커피","A-03");
-console.log("불리언 자료 : 품절, 영수증 출력 여부, 적립여부");
-console.log(false,true,true);
-console.log("배열 자료 : 카테고리명들, 제품명들, 주문한 상품들");
-console.log(["커피","음료","주스/에이드"],["아메리카노","빽사이즈아메리카노(ICED)","원조커피"],["달달한연유라떼",,]);
-console.log("객체 자료 : 제품, 주문서, 영수증");
-console.log({제품명:"콜라", 가격:1000, 재고: 10});
-console.log({선택된제품명:["콜라","사이다"], 총가격: 4000});
-console.log({주문번호:"A-03", 주문날짜:"2025-12-24", 카드번호:"5678-8954-1254"});
