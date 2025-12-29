@@ -1,0 +1,103 @@
+
+.title{
+    font-family: "맑은 고딕", "굴림"; /* 글꼴 */
+    font-size: 40px; /* 글꼴크기 */
+    font-weight: bold; /* 글꼴 진하게 */
+    font-style: italic; /* 글꼴 기울기 */
+}
+/* 외부폰트 : 1.영문:구글폰트 2.한글:눈누폰트 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NexonMaplestory';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonMaplestory';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+.content{
+    font-family: 'Pretendard';
+    color: purple; /* 글꼴 색상*/
+    word-spacing: 10px; /* 단어간격 : 어간 */
+    letter-spacing: 10px; /* 글자간격 : 자간 */
+    line-height: 150%; /* 줄간격 : %백분율*/
+}
+
+.writer{
+    text-align: center; /*마크업 안에 있는 content내용물 가로 정렬*/
+    font-family: 'NexonMaplestory';
+    text-decoration: underline overline line-through; 
+    /*선긋기 : underline(밑줄), overline(윗줄) line-through(취소선)*/
+    text-shadow: 5px 5px 5px gray; 
+    /* 텍스트 그림자 x-offset(+rigrt -left), y-offset, bur, color 테두리용 */
+    color : green;/* 방법1 : 그냥 이름 지정 */
+    color : rgb( 140, 200, 100);/* 방법2 : rgb값으로 지정*/
+    color : #000000; /* 방법3 : 헥스코드( 16진수 값으로 지정) */
+}
