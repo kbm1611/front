@@ -25,7 +25,8 @@ console.log(`result: ${id == "admin" || id == "admin@test.com" ? "관리자" : "
 
 //문제6 : 학점 변환기(HTML 출력)
 let score = Number(prompt("점수"));
-console.log(`result : ${score >= 90 ? 'A' : score >= 80 ? 'B' : score < 70 ? 'C' : 'C+'}`);
+result = `result : ${score >= 90 ? 'A' : score >= 80 ? 'B' : score < 70 ? 'C' : 'C+'}`;
+document.querySelector('h2').innerHTML = result;
 
 //문제7 : 청년 할인 이벤트 대상 확인
 let age = Number(prompt("나이"));
@@ -40,7 +41,7 @@ console.log(`좋아요:${likeCount}`);
 let todoList = ['장보기', '과제하기'];
 let newItem = prompt("새로운 할 일");
 todoList.push(newItem);
-console.log(todoList);
+console.log(`결과9 : ${todoList}`);
 
 
 //문제10 : 대기열의 마지막 사람 확인하기
