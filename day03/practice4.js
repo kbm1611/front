@@ -35,7 +35,7 @@ console.log(`result : ${age >= 20 && age <=29 ? "이벤트 대상입니다." : "
 //문제8 : '좋아요'카운터 만들기
 let likeCount = 3;
 likeCount++;
-console.log(`좋아요:${likeCount}`);
+console.log(`좋아요 : ${likeCount}`);
 
 //문제9 : 할 일 목록에 항목 추가하기
 let todoList = ['장보기', '과제하기'];
@@ -46,4 +46,4 @@ console.log(`결과9 : ${todoList}`);
 
 //문제10 : 대기열의 마지막 사람 확인하기
 let waitingList = ['김민준', '이서연', '박도윤', '최지우'];
-console.log(`마지막 대기자는 ${waitingList[waitingList.length-1]}입니다.`);
+console.log(`결과10 : 마지막 대기자는 ${waitingList[waitingList.length-1]}입니다.`);
