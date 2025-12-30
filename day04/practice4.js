@@ -1,12 +1,9 @@
 //문제1: 과일 목록 관리
 let fruitList = ['사과', '바나나'];
 let newfruit = prompt("새로운 과일명: ");
-if(fruitList[0] == newfruit){
-    console.log('이미 존재하는 과일입니다.')
-} // 입력받은 새로운 과일 이름을 배열의 첫번째 요소와 비교
-else if(fruitList[1] == newfruit){
-    console.log('이미 존재하는 과일입니다.')
-} // 입력받은 새로운 과일 이름을 배열의 두번째 요소와 비교
+if(fruitList.indexOf(newfruit) != -1){
+    console.log('이미 존재하는 과일입니다.');
+}
 else{
     fruitList.push(newfruit);
     console.log(fruitList);
@@ -73,7 +70,7 @@ else if(num2 > num3){
 }
 else{
     console.log(`가장 큰 수: ${num3}`);
-}
+} // 변수 활용 : (1) [입력받은/중간연산식] 저장 (2) 가독성
 
 //문제6: 윤년 판별기
 let year = Number(prompt("연도 입력: "));
