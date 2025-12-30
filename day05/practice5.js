@@ -116,6 +116,32 @@ for(let index = 0; index <= movieNames.length-1; index++){
 }
 
 // 문제9: 좌석 예약 상태 표시하기
+//초기 데이터
 let seatStatus = ['빈좌석', '예약석', '예약석', '빈좌석', '예약석', '빈좌석']; //초기 데이터
 
+for(let index = 0; index <= seatStatus.length-1; index += 2){
+    console.log(seatStatus[index], seatStatus[index+1]);
+} // 추후에 HTML에 출력 + CSS로 표시
+
 // 문제10: 주차 요금 정산하기
+//초기 데이터
+let carNumbers = ['210어7125', '142가7415', '888호8888', '931나8234'];
+let usageMinutes = [65, 30, 140, 420]
+
+let carCharge = [];
+
+/*요금 규정
+ -기본 요금: 최초 30분까지 1,000원
+ -추가 요금: 30분 초과 시, 매 10분마다 500원씩 추가
+ -일일 최대 요금: 20,000원(아무리 오래 주차해도 20,000원을 초과할 수 없음)*/
+
+ for(let index = 0; index<= carNumbers.length-1; index++){
+    if(usageMinutes[index] <= 30){
+        carCharge[index] = 1000; // 30분 초과하지 않았을 시 기본 요금만 부과
+    }
+    else{
+        carCharge[index] = 1000 + (parseInt((usageMinutes[index]-30)/10) * 500); // 요금 계산하여 넣음
+        if(carCharge[index] > 20000){ carCharge[index] = 20000; } // 요금이 2만원 초과시 2만원으로 수정
+    }
+    console.log(`차량 번호: ${carNumbers[index]} 주차한 시간: ${usageMinutes[index]} 주차 요금: ${carCharge[index]}`);
+ } //추후에 HTML에 출력
