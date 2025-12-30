@@ -6,16 +6,16 @@
 //조건: 총점이 90점 이상, 참 : '성공', 거짓: '실패'
 let 점수1 = prompt( "점수1 : ");
 let 점수2 = prompt( "점수2 : ");
-let 총점1 = Number(점수1 + 점수2);
-console.log(`${ 총점1 >= 90 ? "성공" : "실패" }`); // 삼항연산자
+let 총점 = Number(점수1 + 점수2);
+console.log(`${ 총점 >= 90 ? "성공" : "실패" }`); // 삼항연산자
 //if(조건) { 참 } else{ 거짓 }
 if( 총점 >= 90 ){ console.log( "성공" );}
 else{ console.log( "실패" ); }
 
 /*문제 2: 두 수 중 더 큰 수 찾기
 서로 다른 두 개의 정수를 입력받아, 더 큰 수를 출력하는 프로그램을 작성하시오.*/
-let 숫자1 = Number(prompt());
-let 숫자2 = Number(prompt());
+let 숫자1 = Number(prompt("숫자1: "));
+let 숫자2 = Number(prompt("숫자2: "));
 if( 숫자1 >= 숫자2){ console.log(숫자1); }
 else{ console.log(숫자2); }
 
@@ -101,7 +101,7 @@ else{ console.log('재시험'); }
 만약 목록에 없는 번호를 입력하면 '없는 상품입니다.'라고 출력하는 프로그램을 작성하시오.*/
 let drinkNames = ['콜라', '사이다', '커피'];
 let drinkPrices = [1000, 1000, 1500];
-let drink_num = Number(prompt("원하는 음료 입력:"));
+let drink_num = prompt("원하는 음료 입력:");
 
 if(drink_num >= 0 && drink_num <= 2){ console.log(`선택하신 음료는 ${drinkNames[drink_num]}입니다. 가격은 ${drinkPrices[drink_num]}원입니다.`); }
 else{ console.log('없는 상품입니다.'); }
