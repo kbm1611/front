@@ -103,7 +103,5 @@ let drinkNames = ['콜라', '사이다', '커피'];
 let drinkPrices = [1000, 1000, 1500];
 let drink_num = Number(prompt("원하는 음료 입력:"));
 
-if(drink_num == 0){ console.log(`선택하신 음료는 ${drinkNames[0]}입니다. 가격은 ${drinkPrices[0]}원입니다.`); }
-else if(drink_num == 1){ console.log(`선택하신 음료는 ${drinkNames[1]}입니다. 가격은 ${drinkPrices[1]}원입니다.`); }
-else if(drink_num == 2){ console.log(`선택하신 음료는 ${drinkNames[2]}입니다. 가격은 ${drinkPrices[2]}원입니다.`); }
+if(drink_num >= 0 && drink_num <= 2){ console.log(`선택하신 음료는 ${drinkNames[drink_num]}입니다. 가격은 ${drinkPrices[drink_num]}원입니다.`); }
 else{ console.log('없는 상품입니다.'); }
