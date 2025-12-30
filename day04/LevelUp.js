@@ -6,7 +6,7 @@ let balanceList=[50000,120000,30000];
 let account = prompt("계좌번호를 입력하세요");
 let amount = Number(prompt("출금 금액을 입력하세요."));
 
-if(accountNumberList[0] == account || accountNumberList[1] == account || accountNumberList[2] == account ){
+if(accountNumberList.indexOf(account) != -1){
 
     let index = accountNumberList.indexOf(account); console.log(index);
 
