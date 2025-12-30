@@ -1,0 +1,25 @@
+/* 작업용 */
+*{ border: solid 1px #0f6878; margin: 10px; }
+
+.s1{
+    display: inline ; /* 표시 방법*/
+    width: 100px; /* 사이즈 불가능 */
+    /* (왼/오른)안쪽 여백만 가능 */
+    margin: 20px; padding: 20px;
+}
+.s2{
+    display: block; /* div처럼 */
+    width: 100px; /* 사이즈 적용 가능 */
+    height: 100px;
+    margin: 20px;
+    /* 여백 가능 */
+    padding: 20px;
+}
+.s3{
+    display: inline-block;
+    width: 100px; height: 100px; /* 사이즈 가능*/
+    margin: 50px; padding: 50px; /* 여백 가능 */
+}
+.s4{
+    display: none; /* 자바 스크립트들이랑 많이 사용함 */
+}

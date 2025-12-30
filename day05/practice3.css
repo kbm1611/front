@@ -1,0 +1,38 @@
+.image{
+    display: inline-block;
+    width: 270px;
+    height: 380px;
+    margin: 15px;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+}
+.content{
+    width: 500px;
+    color: white;
+    font-size: 20px;
+    margin: 15px;
+    padding: 20px;
+    background-color: #0f6878;
+}
+.line{
+    margin: 15px;
+    padding: 5px;
+    padding-left: 0px;
+}
+.accent{
+    font-weight: 400;
+    color : orange;
+} /* 강조 */
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    margin-left: 0px;
+} /* 제목 */
+.num{
+    font-size: 30px;
+    font-weight: bold;
+    color : orange;
+} /* 01, 02 */
