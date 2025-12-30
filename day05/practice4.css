@@ -1,0 +1,48 @@
+*{
+    margin: 0 auto;
+}
+.Sign{
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px pink;
+    text-align: center;
+    padding: 10px;
+    width: 800px;
+    height: 600px;
+}
+.title{
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.text{
+    border: solid 1px black;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 350px;
+    height: 60px;
+    margin: 10px;
+    padding-left: 15px;
+}
+.button{
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px;
+    background-color: blue;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.message{
+    font-size: 30px;
+    width: 500px;
+    height: 100px;
+}
+.blue{
+    font-weight: 500;
+    color: blue;
+}
+a{
+    text-decoration: none;
+}
