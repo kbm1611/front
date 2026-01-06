@@ -1,0 +1,30 @@
+
+a{ text-decoration: none; color: black; } /*밑줄제거, 색상검정*/
+
+/* [1] 선택자:hover 만일 해당 요소에마우스를 올렸을 때 */
+a:hover{ color: red; font-size: 20px; }
+/* [2] 선택자:visited 만일 브라우저(크롬)내 방문한 적이 있는 링크일때*/
+a:visited{ color: blue; font-size: 10px; }
+/* [3] 선택자:active 만일 해당 요소를 클릭했을 때 순간*/
+a:active{ color: yellow; font-size: 30px; }
+
+/* [4] 선택자::befor/after HTML에는 존재하지 않지만 가상(가짜)의 요소(content) 추가 */
+.box1::before{
+    content : "[가상요소 before구역]";
+    color: aqua;
+}
+.box1::after{
+    content: "[가상요소 after구역]";
+    color: brown;
+}
+/* [활용1] 글머리 */
+li{ list-style-type: none; }
+.box2 > li::before{ content: "😏"; color: red;}
+
+/* [활용2] 글머리2 */
+.box2 > li::after{ content: url("../img/체스.jpg"); }
+
+/* [5] 선택자:nth-of-type( 순서번호 )     하위 요소들이 여러개 일때 번호로 선택하기 */
+.box2 > li:nth-of-type(1){
+    color: red;
+}
