@@ -144,4 +144,5 @@ let carCharge = [];
         if(carCharge[index] > 20000){ carCharge[index] = 20000; } // 요금이 2만원 초과시 2만원으로 수정
     }
     console.log(`차량 번호: ${carNumbers[index]} 주차한 시간: ${usageMinutes[index]} 주차 요금: ${carCharge[index]}`);
- } //추후에 HTML에 출력
+    box.innerHTML += `${carNumbers[index]}: ${usageMinutes[index]}분 주차, 최종 요금: ${carCharge[index]}원<br/>`;
+}
