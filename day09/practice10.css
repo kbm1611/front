@@ -1,0 +1,40 @@
+li{ list-style-type: none;} /* 글머리 제거 */
+a { text-decoration: none; color: black;} /* 링크 초기값 제거 */
+*{ padding: 0px; margin: 0px;} /* 기본여백 제거 */
+
+/* [1] 오른쪽 하단에 토글 전체 이동 */
+.toggle-wrap{
+    position: fixed; /* 화면 크기에 상관없이 위치 고정*/
+    bottom: 10px; /* 아래에서 위로 10이동 */
+    right: 10px; /* 오른쪽에서 왼쪽으로 10 이동 */
+}
+/* [2] 메인 버튼 구성 */
+.toggle-main{
+    /* 원형만들기 : 정사각형 크기의 둥근모서리 */
+    width: 50px; height: 50px; border-radius: 50%;
+    background-color: black;
+    color: white; font-size: 30px;
+    text-align: center;
+    line-height: 155%; /* 줄간격 이용한 한줄짜리 세로 위치 설정 */
+}
+/* [3] 서브 메뉴 버튼 구성 */
+.toggle-sub{
+    position: absolute;
+    bottom: 45px; right: 8px;
+    padding-bottom: 8px;
+    display: none; /* 서브메뉴 숨기기 */
+}
+.toggle-sub > li{
+    width: 35px; height: 35px; border-radius: 50%;
+    background-color: skyblue;
+    font-size: 8px;
+    margin-bottom: 10px;
+    display: flex; justify-content: center; align-items: center;
+}
+.toggle-sub > li > a{
+    color: blue; font-weight: bold;
+}
+/* [4] 메인 버튼을 호버 했을때 서브메뉴 열기 */
+.toggle-wrap:hover toggle.sub{
+    display: block; /* 서브메뉴 열기 */
+}
