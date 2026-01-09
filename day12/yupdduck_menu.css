@@ -166,7 +166,7 @@ a { text-decoration: none; color: black; }
 .menuprice { padding: 20px; color: #DE1D24; font-size: 16px; }
 
 /* Hot Stickers */
-.hotstickerbox {
+.stickerbox {
     position: absolute;
     top: 30px;
     right: 30px;
@@ -174,17 +174,17 @@ a { text-decoration: none; color: black; }
     width: 54px;
 }
 
-.hotstickerbox img { width: 100%; }
+.stickerbox img { width: 100%; }
 
 /* ============================================================
    5. Footer Section (하단 구역) - 공통 구역
    ============================================================ */
 #footer {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: flex-start;
     width: 100%;
-    padding: 60px 40px 20px 60px;
+    padding: 40px 0px 60px;
     background-color: white;
     border-top: 1px solid black;
     color: #878787;
@@ -202,13 +202,14 @@ a { text-decoration: none; color: black; }
 .footinfo {
     width: auto;
     font-size: 15px;
+    padding-left: 15px;
 }
 
 .footlink {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 15px;
+    padding-top: 10px;
 }
 
 .footlink > a {
@@ -232,8 +233,9 @@ a { text-decoration: none; color: black; }
     display: flex;
     align-items: center;
     width: 230px;
-    height: 50%;
-    margin: 10px;
+    height: 40%;
+    margin-bottom: 15px;
+    margin-right: 15px;
     padding: 10px;
     background-color: #f6f6f6;
 }
