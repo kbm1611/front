@@ -17,6 +17,7 @@ a{ color: black; text-decoration: none; }
 #content{ width: 1600px; margin: 0 auto; }
 #footer{ width: 100%; }
 
+
 /*================= 1.상단메뉴 ==================*/
 #topMenu{
     display: flex; justify-content: flex-end; /*하위 요소 배치방법*/
@@ -25,6 +26,7 @@ a{ color: black; text-decoration: none; }
 }
 #topMenu > li > span {padding: 0px 15px;}
 #topMenu > li img { width: 20px; margin: 2px 20px 0px 0px;}
+
 /*================= 2.본메뉴 ==================*/
 #mainMenu{
     display: flex; justify-content: space-between; align-items: center;
@@ -41,6 +43,7 @@ a{ color: black; text-decoration: none; }
 *:focus{ outline: none; } /* 커서(포커스) 활성화 되었을 때 테두리/outline 제거 */
 #mainMenu .new{ color: red; }
 #mainMenu .logo{ width: 155px; }
+
 /*================= 2-2 드롭메뉴==================*/
 #mainMenu > ul > li{ position: relative; }
 #mainMenu .subMenu{
