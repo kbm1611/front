@@ -1,0 +1,40 @@
+*{
+    padding: 0px; margin: 0px;
+    font-size: 24px;
+}
+h1{
+    display: flex; justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 60px;
+}
+button{
+    width: 90px; height: 30px;
+    font-size: 18px;
+}
+.registerarea{
+    width: 500px; height: 100%;
+    padding-left: 20px; margin-left: 10px;
+    padding-bottom: 20px;
+}
+.registerarea > h2{
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+.listarea{
+    width: 500px; height: 100%;
+    padding-left: 20px; margin-left: 10px;
+}
+.listarea > h2{
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+table{
+    border: 1px solid black;
+}
+th{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}
