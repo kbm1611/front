@@ -3,17 +3,23 @@
 // prompt를 세 번 사용하여 사용자로부터 '제품명', '가격', '제조사'을 순서대로 입력받습니다. 
 // 입력받은 정보로 하나의 product 객체를 생성하고, 생성된 객체를 콘솔에 출력하시오.
 
-let product_name = prompt("제품명: ");
-let price = Number(prompt("가격: "));
-let brand = prompt("제조사: ");
 
-let product = {제품명: product_name, 가격: price, 제조사: brand};
-console.log(product);
+
+// let product_name = prompt("제품명: ");
+// let price = Number(prompt("가격: "));
+// let brand = prompt("제조사: ");
+
+// let product = {제품명: product_name, 가격: price, 제조사: brand};
+// console.log(product);
+
+
 
 // 문제 2: prompt로 회원 가입 및 아이디 중복 확인 기능 구현
 // prompt를 세 번 사용하여 사용자로부터 '아이디', '비밀번호', '이름'을 순서대로 입력받습니다.
 // 입력받은 정보로 하나의 member 객체를 생성하고, members 배열에 저장하여 배열을 콘솔에 출력하시오.
 // 단] 입력받은 아이디가 이미 배열에 존재하면 '존재하는 아이디 입니다'를 출력하고 배열에 등록하지 않습니다.
+
+
 
 const members = [
 { id: 'user1', password: 'pass1', name: '사용자1' },
@@ -42,6 +48,8 @@ members.push( member ); // [3] 배열 내 생성한 객체 저장, 배열변수�
 console.log( members ); // [4] 배열 전체 출력
 }
 else{ console.log("존재하는 아이디 입니다."); }
+
+
 
 // 문제 3: 객체 배열의 속성 값 평균 구하기
 // scores 배열에 담긴 모든 학생의 수학(math) 점수 평균을 계산하여 콘솔에 출력하시오.
@@ -106,6 +114,30 @@ console.log( movieTitles );
 // '기획팀': ['영희', '지혜']
 // }
 
+const team = [
+{ name: '철수', department: '개발팀' },
+{ name: '영희', department: '기획팀' },
+{ name: '민수', department: '개발팀' },
+{ name: '지혜', department: '기획팀' }
+];
+
+let result = { '개발팀':[], '기획팀':[] };
+
+for(let i = 0; i<=team.length-1; i++){
+    if(team[i].department == '개발팀'){
+        result.개발팀 = team[i].name;
+    }
+    else if(team[i].department == '기획팀'){
+        result.기획팀 = team[i].name;
+    }
+    else{
+        console.log(`존재하지 않는 부서! ${result[i].department}`);
+    }
+}
+console.log( result );
+
+
+
 // 문제 8: 장바구니 총액 계산하기
 // 고객의 장바구니 정보를 담은 cart 배열과 상품 정보를 담은 productsInfo 배열이 있습니다.
 // cart 배열: 각 요소는 고객이 담은 상품의 id와 quantity(수량)를 가집니다.
@@ -118,10 +150,56 @@ console.log( movieTitles );
 // { id: 3, price: 2500 }
 // ];
 
+const cart = [{ id: 1, quantity: 2 },{ id: 3, quantity: 1 }];
+const productsInfo = [
+{ id: 1, price: 1000 },
+{ id: 2, price: 5000 }, // 장바구니에 없는 상품
+{ id: 3, price: 2500 }
+];
+
+let total = 0;
+
+for(let i = 0; i <= cart.length-1; i++){
+    if(cart[i].id == 1){
+        total += cart[i].quantity * 1000;
+    }
+    else if(cart[i].id == 2){
+        total += cart[i].quantity * 5000;
+    }
+    else if(cart[i].id == 3){
+        total += cart[i].quantity * 2500;
+    }
+}
+console.log( `총 결제 금액: ${total}` );
+
+
 // 문제 9: 투표 결과 집계하기
 // 다음 votes 배열은 투표 결과를 나타냅니다. 각 후보가 몇 표를 받았는지 집계하여, 후보의 이름이 키이고 득표수가 값인 객체를 만들어 콘솔에 출력하시오.
 // const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 // 출력 예시: { A: 3, B: 3, C: 1 }
+
+const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
+let countA = 0;
+let countB = 0;
+
+resultvote = { A : 0, B : 0, C : 0 };
+
+for(let i=0; i <= votes.length-1; i++){
+    if(votes[i] == 'A'){
+        resultvote.A++;
+    }
+    else if(votes[i] == 'B'){
+        resultvote.B++;
+    }
+    else if(votes[i] == 'C'){
+        resultvote.C++;
+    }
+    else{
+        console.log("유효하지 않는 투표입니다.");
+    }
+}
+console.log( resultvote );
+
 
 // 문제 10: 웹툰 평점 시각화하기
 // webtoons 배열의 데이터를 이용하여, 각 웹툰의 평점을 별(★, ☆)로 시각화하여 HTML에 출력하시오.
@@ -138,6 +216,35 @@ console.log( movieTitles );
  유미의 세포들 ★★★★★★★★★☆
  전지적 독자 시점 ★★★★★★★★★☆
 */
+const webtoons = [
+{ title: '나 혼자만 레벨업', rating: 9.8 },
+{ title: '유미의 세포들', rating: 9.9 },
+{ title: '전지적 독자 시점', rating: 9.7 }
+];
+let star = '';
+let html = ``;
+
+
+for(let i=0; i <= webtoons.length-1; i++){
+    if(webtoons[i].title == '나 혼자만 레벨업'){
+        star = "★".repeat(parseInt(webtoons[i].rating)) + "☆".repeat(10 - parseInt(webtoons[i].rating));
+        html += `나 혼자만 레벨업 ${star}<br/>`
+    }
+    else if(webtoons[i].title == '유미의 세포들'){
+        star = "★".repeat(parseInt(webtoons[i].rating)) + "☆".repeat(10 - parseInt(webtoons[i].rating));
+        html += `유미의 세포들 ${star}<br/>`
+    }
+    else if(webtoons[i].title == '전지적 독자 시점'){
+        star = "★".repeat(parseInt(webtoons[i].rating)) + "☆".repeat(10 - parseInt(webtoons[i].rating));
+        html += `전지적 독자 시점 ${star}<br/>`
+    }
+    else{
+        console.log("유효하지 않는 웹툰제목입니다.");
+    }
+}
+document.write(html);
+
+
 
 // 문제11 : 공공데이터 포털 : 인천 부평구 맛집 현황 테이블 만들기
 // [구현 조건]
@@ -155,3 +262,20 @@ console.log( movieTitles );
 // 5. 인증키 설정 ( Encoding , Decoding 순서대로 대입하여 설정 )
 // 6. 인증키 설정 후 'API 목록' 에서 [Open Api 호출] 합니다.
 // 7. **실행 결과(JSON)**를 전체 복사합니다. 
+
+let response = {"currentCount":10,"data":[{"소재지":"인천광역시 부평구 안남로417번길 20, 2층 (청천동)","업소명":"1982삼계정","업태":"한식","연번":1,"전화번호":"032-512-1982","지정메뉴":"녹두삼계탕"},{"소재지":"인천광역시 부평구 부평대로 301 (청천동,남광센트렉스 111호)","업소명":"갈비가","업태":"한식","연번":2,"전화번호":"032-363-3787","지정메뉴":"속초코다리냉면"},{"소재지":"인천광역시 부평구 평천로553,1층(삼산동)","업소명":"경복궁삼계탕","업태":"한식","연번":3,"전화번호":"032-511-1494","지정메뉴":"들깨삼계탕"},{"소재지":"인천광역시 부평구 부평대로63번길10-11(부평동)","업소명":"금강산추어탕","업태":"한식","연번":4,"전화번호":"032-527-8118","지정메뉴":"추어탕"},{"소재지":"인천광역시 부평구 부평대로87번길 4(부평동)","업소명":"뉴욕반점","업태":"중식","연번":5,"전화번호":"032-516-4488","지정메뉴":"삼선짬뽕,찹쌀탕수육"},{"소재지":"인천광역시 부평구 신트리로22번길 15-14 (부평동, 1층 일부)","업소명":"더히든키친","업태":"양식","연번":6,"전화번호":"032-272-7276","지정메뉴":"바질페스토파스타"},{"소재지":"인천광역시 부평구 마장로 402(청천동)","업소명":"덕수갈비","업태":"한식","연번":7,"전화번호":"032-517-4070","지정메뉴":"왕갈비탕"},{"소재지":"인천광역시 부평구 대정로 93, 웰링턴 1층 103호 (부평동)","업소명":"동강해물탕","업태":"한식","연번":8,"전화번호":"032-524-9166","지정메뉴":"해물탕"},{"소재지":"인천광역시 부평구 백범로468번길45(십정동)","업소명":"동암아구해물탕","업태":"한식","연번":9,"전화번호":"032-435-0233","지정메뉴":"해물찜,해물탕"},{"소재지":"인천광역시 부평구 부흥로257-7(부평동)","업소명":"들내음 들깨칼국수","업태":"한식","연번":10,"전화번호":"032-515-4151","지정메뉴":"팥칼국수"}],"matchCount":67,"page":1,"perPage":10,"totalCount":67}
+let data = response.data;
+
+let html2 = `<table>`;
+
+for ( let i = 0 ; i <= data.length - 1 ; i++ ){
+    let row = data[i];
+    console.log( row );
+    html2 += `<tr>
+                <td> ${ row.소재지 } </td> <td> ${row.업소명} </td> <td> ${row["업태"]}</td>
+                <td> ${row["연번"]} </td> <td> ${row["전화번호"]} </td> <td> ${row["지정메뉴"]} </td>
+            </tr>`;
+}
+html2 += `</table>`;
+
+document.write( html2 );

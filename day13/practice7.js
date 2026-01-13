@@ -14,7 +14,7 @@ console.log( isAdult(17) );
 const numbers = [10, 20, 30, 40, 50];*/
 const numbers = [10, 20, 30, 40, 50];
 
-function sumArray(numbers){
+function sumArray(){
     let sum = 0;
 
     for(let i = 0; i <= numbers.length-1; i++){
@@ -22,7 +22,7 @@ function sumArray(numbers){
     }
     return sum;
 }
-console.log( `총 합 : ${sumArray(numbers)}` );
+console.log( `총 합 : ${sumArray()}` );
 
 /*실습 3: 가장 긴 단어 찾기
 문자열로 이루어진 배열을 매개변수로 받아, for 반복문을 사용해 가장 긴 단어를 찾아 반환하는 findLongestWord 함수를 만드세요. 아래 words 배열로 테스트해 보세요.
@@ -30,7 +30,7 @@ const words = ['apple', 'banana', 'kiwi', 'strawberry'];*/
 
 const words = ['apple', 'banana', 'kiwi', 'strawberry'];
 
-function findLongestWord(words){
+function findLongestWord(){
     let long = "";
 
     for(let i = 0; i <= words.length-1; i++){
@@ -40,7 +40,7 @@ function findLongestWord(words){
     }
     return long;
 }
-console.log(`가장 긴 단어: ${findLongestWord(words)}`);
+console.log(`가장 긴 단어: ${findLongestWord()}`);
 
 /*실습 4: 게임 점수 관리하기
 let userScore = 0; 전역 변수를 만드세요. gainScore() 함수는 userScore를 10 증가시키고, loseScore() 함수는 5 감소시킵니다.
@@ -74,7 +74,7 @@ const students = [
   { name: '박민준', score: 78 }
 ];
 
-function findTopStudent(students){
+function findTopStudent(){
     let topstudents = students[0];
 
     for(let i = 0; i <= students.length-1; i++ ){
@@ -84,7 +84,7 @@ function findTopStudent(students){
     }
     return topstudents.name;
 }
-console.log(`가장 높은 점수: ${findTopStudent(students)}`);
+console.log(`가장 높은 점수: ${findTopStudent()}`);
 
 
 /*실습 6: 상품 목록 페이지 만들기
@@ -101,19 +101,19 @@ const products = [
   { name: '키보드', price: 80000, stock: 25 }
 ];
 
-function renderProducts(products){
-    let html = `<div>`;
+function renderProducts(){
+    let html = ``;
     for(let i = 0; i <= products.length-1; i++){
-        html += `<h4> ${products[i].name} </h4>
+        html += `<div>
+                <h4> ${products[i].name} </h4>
                 <p>${products[i].price}</p>
                 <p>${products[i].stock}</p>
-        `;
+        </div>`;
     }
-    html += `</div>`;
     document.write(html);
 }
 
-renderProducts(products);
+renderProducts();
 
 
 
@@ -140,7 +140,7 @@ let todoList = ['장보기', '운동하기'];
 
 let html = `<ul>할 일 목록`
 
-function renderList(todoList){
+function renderList(){
     for(let i = 0; i <= todoList.length-1; i++){
         html += `<li>${todoList[i]}</li>`;
     }
@@ -148,7 +148,7 @@ function renderList(todoList){
     document.write(html);
 }
 
-renderList(todoList);
+renderList();
 
 /*실습 9: 입장료 계산 함수
 임의의 나이(age)를 매개변수로 받아 입장료를 반환하는 getTicketPrice 함수를 만드시오.
