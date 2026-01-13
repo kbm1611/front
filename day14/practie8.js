@@ -31,15 +31,19 @@ function register(){ console.log("등록성공"); //Create
     print(); //HTML 출력 실행
 } //Create end
 
+// 3-2] 출력함수 = 특정 화면 새로고침 == 렌더링 == 데이터 변화가 있을때 다시 화면 새로고침
 function print(){ //Read - 출력
+    //1. 어디에 : tbody
     const inputareadom = document.querySelector("#inputarea"); //출력영역DOM
+    //2. 무엇을 : 배열내 객체들을 <tr> 구성
+    
     let html = ``; //출력하기 위한 html 변수 설정
-
     for(let index=0; index<=lists.length-1; index++){
         html += `<tr>
         <td>${lists[index].날짜}</td> <td>${lists[index].항목}</td> <td>${lists[index].금액.toLocaleString()}</td>
         </tr>`
     }
 
+    //3. 출력 : 구성된 html 출력한다.
     inputareadom.innerHTML =html; //출력
 } //Read end
