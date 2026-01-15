@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='final_practice1.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="top">
+            <select id="catagory">
+                <option value="" disabled>카테고리 선택하세요.</option>
+                <option value="1" >음료</option>
+                <option value="2" >과자</option>
+                <option value="3" >사탕</option>
+            </select>
+            <input id="productName" type="text" placeholder="제품명" />
+            <input id="productPrice" type="number" placeholder="제품가격" />
+            <input id="imgfile" type="file" />
+            <button id="register" onclick="register_item()">등록</button>
+        </div> <!--header end-->
+        <hr>
+        <div id="body">
+            <div id="menu">
+                <div id="main">
+                    <table><!--제품 목록-->
+                        <thead>
+                            <tr>
+                                <th>이미지</th> <th>카테고리명</th> <th>상품명</th>
+                                <th>가격</th> <th>등록일</th> <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div> <!--main end-->
+
+            </div> <!--menu end-->
+        </div> <!--body end-->
+    </div>
+    <script src="final_practice1.js"></script>
+</body>
+
+</html>
