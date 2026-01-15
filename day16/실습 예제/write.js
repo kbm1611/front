@@ -1,5 +1,6 @@
+
 function boardWrite(){
-    const titleInput = document.querySelector("#title");
+    const titleInput = document.querySelector("#titleInput");
     const contentInput = document.querySelector("#contentInput");
     const pwdInput = document.querySelector("#pwdInput");
 

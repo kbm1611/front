@@ -32,6 +32,8 @@ function boardDelete(){
             if(obj.pwd == confirm){
                 boardList.splice(index, 1);
                 localStorage.setItem('boardList', JSON.stringify(boardList) );
+                alert("삭제 성공");
+                location.href = "list.html"; //삭제 성공 시 list.html 이동
             } else{
                 alert("삭제 실패 : 비밀번호 불일치")
             }
@@ -39,7 +41,7 @@ function boardDelete(){
     }
 }
 
-function boardUpadteView(){
+function boardUpdateView(){
     const url = new URLSearchParams( location.search );
     const selectNo = url.get('no');
 
