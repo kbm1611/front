@@ -103,6 +103,7 @@ function deptAdd() { console.log("부서 등록함수 실행")
     partAry.push(obj);
     console.log(obj)
     partPrint();
+    humanPrint(); // 부서 추가시 새로운 부서 추가 0115추가
 }
 //------------------------------------------------------------------------
 //사원 등록 함수
@@ -111,18 +112,20 @@ function deptAdd() { console.log("부서 등록함수 실행")
 humanPrint(); //js가 열렸을때 최초 1번 함수 실행
 function humanPrint() {
     const hbody = document.querySelector("#empbody")
-    const deptdrop = document.querySelector("#dept-drop") // 0115추가
-    let html = "";
+    const deptdrop = document.querySelector("#dept-drop") // 0115 추가
+    const part = deptdrop.value; //선택한 부서! 0115 추가
+
+    let droptable = `<option value=""> 부서를 선택하세요 </option>`;
+    for( let index = 0; index <= partAry.length-1; index++){
+        droptable += `
+        <option> ${partAry[index].part} </option>    
+        `
+    }
+    deptdrop.innerHTML = droptable; // dept-drop부분 dropdown메뉴 생성 후 넣기! 0115 추가
+
+    let html = ``;
     for (let index = 0; index <= humanAry.length - 1; index++) {
         const human = humanAry[index];
-
-        let part = '';
-        for (let index2 = 0; index2 <= partAry.length - 1; index2++) {
-            if (human.pcode == partAry[index2].pcode) {
-                part = partAry[index2].part;
-                break;
-            }
-        }
 
         html += `<tr>
                     <td>${human.image}</td>
@@ -175,18 +178,21 @@ function empAdd() {
     const name = namedom.value;
     const titledom = document.querySelector("#position")
     const title = titledom.value;
-    const imagedom = document.querySelector("#image")
-    const image = imagedom.files[0];
+    const imagefiledom = document.querySelector("#image")
+
+    const image = imagefiledom.files[0];
+
     if (ppcode == "disabled") { alert("부서를 선택하세요.!"); return; }
     if (name == "" || title == "") { alert("이름과 직급은 필수입니다"); return; }
     hcode += 1;;
     const obj = {
-        "hcode": hcode, "image": image == undefined ? "https://placehold.co/100x100" : URL.createObjectURL(image),
-        "pcode": ppcode, "name": name, "title": title
+        "hcode" : hcode, "image": image == undefined ? "https://placehold.co/100x100" : URL.createObjectURL(image),
+        "pcode" : ppcode, "name": name, "title": title
     }
     humanAry.push(obj);
     console.log(obj)
     humanPrint();
+    vacationPrint(); //사람 추가시 휴가 테이블에도 사람 추가 0115추가
 }
 //-----------------------------------------------------------------
 //휴가 관리 함수
@@ -194,20 +200,22 @@ function empAdd() {
 //1. 출력함수
 vacationPrint();
 function vacationPrint() {
-    const vbody = document.querySelector("#vacbody")
+    const vbody = document.querySelector("#vacbody");
+    const nameDom = document.querySelector("#name-drop"); // 0115추가
+    const name = nameDom.value; // 0115추가
+
+    let droptable = `<option value=""> 휴가 신청 사원을 선택하세요 </option>`;
+    for( let index = 0; index <= humanAry.length-1; index++){
+        droptable += `
+        <option> ${humanAry[index].name} </option>    
+        `
+    } //부서드롭다운과 마찬가지! 0115 추가
+    nameDom.innerHTML = droptable;
 
 
     let html = "";
     for (let index = 0; index <= vacationAry.length - 1; index++) {
         const vacation = vacationAry[index];
-
-        let name = '';
-        for (index = 0; index <= vacationAry.length - 1; index++) {
-            if (vacationAry.hcode == humanAry[index].hcode) {
-                name = humanAry[index].name;
-                break;
-            }
-        }
 
         html += `<div id="vacbox">
                     <div>${name}</div>
