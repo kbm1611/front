@@ -119,7 +119,7 @@ function humanPrint() {
     for (let index = 0; index <= humanAry.length - 1; index++) {
         const human = humanAry[index];
 
-        for(let index2 = 0; index2 <=partAry.length - 1; index2++){
+        for(let index2 = 0; index2 <= partAry.length - 1; index2++){
             if(human.pcode == partAry[index2].pcode){
                 part = partAry[index2].part
                 break;
@@ -174,8 +174,8 @@ let hcode = 1;
 function empAdd() {
     const ppcodedom = document.querySelector("#dept-drop")
     const ppcode = ppcodedom.value;
-    const namedom = document.querySelector("#name")
-    const name = namedom.value;
+    const namedrop = document.querySelector("#name")
+    const name = namedrop.value;
     const titledom = document.querySelector("#position")
     const title = titledom.value;
     const imagefiledom = document.querySelector("#image")
@@ -198,7 +198,7 @@ function empAdd() {
         "pcode" : pcode, "name": name, "title": title
     }
     humanAry.push(obj);
-    console.log(obj)
+    console.log(humanAry);
     humanPrint();
     vacationPrint(); //사람 추가시 휴가 테이블에도 사람 추가 0115추가
 }
@@ -209,8 +209,7 @@ function empAdd() {
 vacationPrint();
 function vacationPrint() {
     const vbody = document.querySelector("#vacbody");
-    const nameDom = document.querySelector("#name-drop"); // 0115추가
-    const name = nameDom.value; // 0115추가
+    const namedrop = document.querySelector("#name-drop"); // 0115추가
 
     let droptable = `<option value=""> 휴가 신청 사원을 선택하세요 </option>`;
     for( let index = 0; index <= humanAry.length-1; index++){
@@ -218,12 +217,22 @@ function vacationPrint() {
         <option> ${humanAry[index].name} </option>    
         `
     } //부서드롭다운과 마찬가지! 0115 추가
-    nameDom.innerHTML = droptable;
+    namedrop.innerHTML = droptable;
 
 
     let html = "";
+    let name = '';
     for (let index = 0; index <= vacationAry.length - 1; index++) {
         const vacation = vacationAry[index];
+
+
+        for(let index2 = 0; index2 <= humanAry.length - 1; index2++){
+            if(vacation.hcode == humanAry[index2].hcode){
+                name = humanAry[index2].name;
+                break;
+            }
+        }
+        console.log(name);
 
         html += `<div id="vacbox">
                     <div>${name}</div>
@@ -264,14 +273,25 @@ function vacSignUp() {
     const vacEnd = vacEnddom.value;
     const vacReasondom = document.querySelector("#vacReason")
     const vacReason = vacReasondom.value;
+
     if (hhcode == "disabled") { alert("사원을 선택하세요.!"); return; }
 
     vcode += 1;;
+
+    let hcode;
+    for(let index = 0; index <= humanAry.length-1; index++){
+        if(hhcode == humanAry[index].name){
+            hcode = humanAry[index].hcode;
+            break;
+        }
+    }
+    console.log("hcode는");
+    console.log(hcode);
     const obj = {
-        "vcode": vcode, "hcode": hhcode, "start": vacStart,
+        "vcode": vcode, "hcode": hcode, "start": vacStart,
         "end": vacEnd, "reason": vacReason
     }
     vacationAry.push(obj);
-    console.log(obj)
+    console.log(vacationAry);
     vacationPrint();
 }
