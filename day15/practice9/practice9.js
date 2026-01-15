@@ -22,7 +22,7 @@ function partPrint() { console.log("부서 출력함수 실행");
 
     for(let index = 0; index <= partAry.length-1; index++){
         partAry[index].pcode = index+1;
-    } console.log("partAry" + partAry);
+    }
 
     let html = ``;
     for (let index = 0; index <= partAry.length - 1; index++) {
@@ -34,13 +34,13 @@ function partPrint() { console.log("부서 출력함수 실행");
         `<tr>
             <td>${part.part}</td>
             <td>
-                <button class="updateBtn" onclick="updateDept()">수정</button>
-                <button class="deleteBtn" onclick="deleteDept()">삭제</button>
+                <button class="updateBtn" onclick="updateDept(${part.pcode})">수정</button>
+                <button class="deleteBtn" onclick="deleteDept(${part.pcode})">삭제</button>
             </td>
         </tr>`
-    }
+    } // part.pcode가 없으면 넘겨주는 매개변수가 없음! 0115추가
 
-    dept.innerHTML = html; console.log("innerHTML 성공!");
+    dept.innerHTML = html;
 }
 
 // 2. 삭제함수
@@ -69,6 +69,14 @@ function deleteDept(pcode) { console.log("부서 삭제함수 실행")
 function updateDept(pcode) { console.log("부서 수정함수 실행");
     for (let index = 0; index <= partAry.length - 1; index++) {
         if (pcode == partAry[index].pcode) {
+            // 만약에 부서목록에 사원이 존재하면 실패에 경고메세지
+            for (let index2 = 0; index2 <= humanAry.length - 1; index2++) {
+                console.log("2차for문");
+                if (humanAry[index2].pcode == pcode) {
+                    alert("현재 삭제할 부서에 사원이 존재함으로 수정 불가")
+                    return;
+                }
+            }
             const newname = prompt("수정할 부서")
             partAry[index].part = newname;
             partPrint();
@@ -102,8 +110,8 @@ function deptAdd() { console.log("부서 등록함수 실행")
 //1. 출력함수 
 humanPrint(); //js가 열렸을때 최초 1번 함수 실행
 function humanPrint() {
-
     const hbody = document.querySelector("#empbody")
+    const deptdrop = document.querySelector("#dept-drop") // 0115추가
     let html = "";
     for (let index = 0; index <= humanAry.length - 1; index++) {
         const human = humanAry[index];
@@ -122,8 +130,8 @@ function humanPrint() {
                     <td>${part}</td>
                     <td>${human.title}</td>
                     <td>
-                        <button class="updateBtn" onclick="updateEmp()">수정</button>
-                        <button class="deleteBtn" onclick="deleteEmp()">삭제</button>
+                        <button class="updateBtn" onclick="updateEmp(${human.hcode})">수정</button>
+                        <button class="deleteBtn" onclick="deleteEmp(${human.hcode})">삭제</button>
                     </td>
                 </tr>`
     }
@@ -209,7 +217,7 @@ function vacationPrint() {
                         <div>${vacation.end}</div>
                     </div>
                     <div id="reasontext"> ${vacation.reason} </div>
-                    <button id="vacCancleBtn" onclick="vacCancle()">신청취소</button>
+                    <button id="vacCancleBtn" onclick="vacCancle(${vacationAry.vcode})">신청취소</button>
                 </div>`
     }
     vbody.innerHTML = html;
