@@ -69,14 +69,6 @@ function deleteDept(pcode) { console.log("부서 삭제함수 실행")
 function updateDept(pcode) { console.log("부서 수정함수 실행");
     for (let index = 0; index <= partAry.length - 1; index++) {
         if (pcode == partAry[index].pcode) {
-            // 만약에 부서목록에 사원이 존재하면 실패에 경고메세지
-            for (let index2 = 0; index2 <= humanAry.length - 1; index2++) {
-                console.log("2차for문");
-                if (humanAry[index2].pcode == pcode) {
-                    alert("현재 삭제할 부서에 사원이 존재함으로 수정 불가")
-                    return;
-                }
-            }
             const newname = prompt("수정할 부서")
             partAry[index].part = newname;
             partPrint();
@@ -113,7 +105,6 @@ humanPrint(); //js가 열렸을때 최초 1번 함수 실행
 function humanPrint() {
     const hbody = document.querySelector("#empbody")
     const deptdrop = document.querySelector("#dept-drop") // 0115 추가
-    const part = deptdrop.value; //선택한 부서! 0115 추가
 
     let droptable = `<option value=""> 부서를 선택하세요 </option>`;
     for( let index = 0; index <= partAry.length-1; index++){
@@ -124,8 +115,16 @@ function humanPrint() {
     deptdrop.innerHTML = droptable; // dept-drop부분 dropdown메뉴 생성 후 넣기! 0115 추가
 
     let html = ``;
+    let part = '';
     for (let index = 0; index <= humanAry.length - 1; index++) {
         const human = humanAry[index];
+
+        for(let index2 = 0; index2 <=partAry.length - 1; index2++){
+            if(human.pcode == partAry[index2].pcode){
+                part = partAry[index2].part
+                break;
+            }
+        }
 
         html += `<tr>
                     <td>${human.image}</td>
@@ -138,6 +137,7 @@ function humanPrint() {
                     </td>
                 </tr>`
     }
+    console.log(humanAry);
     hbody.innerHTML = html;
 }
 
@@ -160,7 +160,7 @@ function updateEmp(hcode) {
         if (hcode == humanAry[index].hcode) {
             const newname = prompt("수정할 이름")
             const newtitle = prompt("수정할 직급")
-            humanAry[index].part = newname;
+            humanAry[index].name = newname;
             humanAry[index].title = newtitle;
             humanPrint();
             break;
@@ -184,10 +184,18 @@ function empAdd() {
 
     if (ppcode == "disabled") { alert("부서를 선택하세요.!"); return; }
     if (name == "" || title == "") { alert("이름과 직급은 필수입니다"); return; }
+    
+    let pcode;
+    for(let index = 0; index <= partAry.length-1; index++){
+        if(ppcode == partAry[index].part){
+            pcode = partAry[index].pcode;
+            break;
+        }
+    }
     hcode += 1;;
     const obj = {
         "hcode" : hcode, "image": image == undefined ? "https://placehold.co/100x100" : URL.createObjectURL(image),
-        "pcode" : ppcode, "name": name, "title": title
+        "pcode" : pcode, "name": name, "title": title
     }
     humanAry.push(obj);
     console.log(obj)

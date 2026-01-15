@@ -131,21 +131,3 @@ function productUpdate(pcode){ /* 수정 함수 - U */
         }
     }
 }
-
-
-
-
-
-
-// //function deleteEmp(hcode) {
-//     //1. pcode의 배열내 인덱스 찾기
-//     for (let index = 0; index <= humanAry.length - 1; index++) {
-//         if (hcode == humanAry[index].hcode) {
-//             humanAry.splice(index, 1)
-
-//             humanPrint();
-//             break;
-//         }
-//     }
-// }
-
