@@ -225,7 +225,7 @@ function vacationPrint() {
                         <div>${vacation.end}</div>
                     </div>
                     <div id="reasontext"> ${vacation.reason} </div>
-                    <button id="vacCancleBtn" onclick="vacCancle(${vacationAry.vcode})">신청취소</button>
+                    <button id="vacCancleBtn" onclick="vacCancle(${vacation.vcode})">신청취소</button>
                 </div>`
     }
     vbody.innerHTML = html;
@@ -233,7 +233,8 @@ function vacationPrint() {
 
 //2. 삭제함수
 //const vacationAry = [ { "vcode" : 1 ,"hcode" : "1" , "start" : "2025-08-04" , "end" : "2025-08-04" , "reason" : "병원진료" }  ]
-function vacCancle(vcode) {
+function vacCancle(vcode) { console.log("휴가 취소 함수 실행");
+    console.log(vcode);
     for (let index = 0; index <= vacationAry.length - 1; index++) {
         if (vcode == vacationAry[index].vcode) {
             vacationAry.splice(index, 1)
@@ -244,7 +245,7 @@ function vacCancle(vcode) {
 }
 
 //3. 등록함수
-let vcode = 2;
+let vcode = 1;
 function vacSignUp() {
     //const vacationAry = [ { "vcode" : 1 ,"hcode" : "1" , "start" : "2025-08-04" , "end" : "2025-08-04" , "reason" : "병원진료" }  ]
     const hhcodedom = document.querySelector("#name-drop")
@@ -256,6 +257,7 @@ function vacSignUp() {
     const vacReasondom = document.querySelector("#vacReason")
     const vacReason = vacReasondom.value;
     if (hhcode == "disabled") { alert("사원을 선택하세요.!"); return; }
+
     vcode += 1;;
     const obj = {
         "vcode": vcode, "hcode": hhcode, "start": vacStart,
