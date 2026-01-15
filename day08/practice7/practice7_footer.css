@@ -1,0 +1,76 @@
+/* 전체 */
+.Footer{
+    background-color: #ffffff;
+    justify-content: center;
+    text-align: left;
+    margin: 0px 40px;
+    padding-top: 20px;
+}
+
+
+/* 언어 선택 */
+.language{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: #8a8d91;
+    font-weight: 450;
+    align-items: center;
+}
+
+.language > a{
+    padding-left: 8px;
+    font-size: 11px;
+    text-decoration: none;
+    color: #8a8d91;
+}
+
+.language > button{
+    padding: 0px 8px;
+    margin: 0px 8px;
+    font-size: 15px;
+    color: #f5f6f7;
+    border: solid 1px #ccd0d5;
+    border-radius: 2px;
+}
+.language > button > a{
+    text-decoration: none;
+    color: #676e7d;
+    font-weight: bold;
+}
+
+
+/* 회색 선 */
+.centerline{
+    border-bottom: solid 1px #dddfe2;
+    height: 8px;
+    margin-bottom: 8px;
+}
+
+
+/* 기타 메뉴 */
+.etcMenu{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 11px;
+    align-items: center;
+}
+
+.etcMenu > a{
+    text-decoration: none;
+    padding-right: 20px;
+    color: #8a8d91;
+}
+
+.etcMenu > a > img{
+    width: 10px;
+}
+
+
+/* Meta 로고 */
+.logo{
+    margin: 20px 0px;
+    font-size: 10px;
+    font-weight: 570;
+    color: #8a8d91;
+}
